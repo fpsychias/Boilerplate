@@ -21,7 +21,7 @@ if (
 console.log(`Building version [${version}]…\n`);
 
 child_process.spawnSync(
-    "ng", [ "build", "--deploy-url", "./dist/"],
+    "ng", [ "build", ...process.argv.slice(2) ],
     { stdio: "inherit", shell: true }
 );
 
